@@ -1,0 +1,12 @@
+SELECT 
+    i.id,
+    i.cod_cititor,
+    i.cod_carte,
+    i.data_imprumut,
+    i.data_returnare,
+    i.status,
+    c.titlu
+FROM imprumuturi i
+JOIN carti c ON i.cod_carte = c.cod_bare
+WHERE i.cod_cititor = 'USER004'
+ORDER BY i.data_imprumut DESC
